@@ -1,0 +1,446 @@
+@import "meniu.css";
+@import "tabelflori.css"; 
+@import "banner.css";
+@import "video.css";
+@import "galerie-statica.css";
+@import "darkmodesign.css";
+
+html{
+    font-size: 18px;
+}
+body.light{
+
+    --culoare-verde-deschis:#c1f7c9; /*tranzitii sau fundal*/
+    --culoare-mov-inchis: #73517a; /*text*/
+    --culoare-alb: #F9F9FF ; /* evidentieri*/
+    --culoare-mov-deschis: #F9E0FF; /*highlight*/
+    --culoare-verde-inchis: #466B3E; /*bordere, tranzitii, text, buton linktop */
+    --culoare-mov-mediu: #B997C2; /*meniu*/
+    --culoare-verde-mediu: #70ba75; /*pentru buton linktop*/
+    --culoare-mov-tranzitie: #d4b9db; 
+    background-image:url("/resurse/imagini/poza-fundal.jpg");
+    
+}
+
+body.dark{
+
+    --culoare-verde-deschis:#83A889; /*tranzitii sau fundal*/
+    --culoare-mov-inchis: #ce9dd8; /*text*/
+    --culoare-alb: #CACACF ; /* evidentieri*/
+    --culoare-mov-deschis: #CF99D4; /*highlight*/
+    --culoare-verde-inchis: #b1e4c0; /*bordere, tranzitii, text, buton linktop */
+    --culoare-mov-mediu: #a36cac; /*meniu*/
+    --culoare-verde-mediu: #487844; /*pentru buton linktop*/
+    --culoare-mov-tranzitie: #AD96B3; 
+    background-image:url("/resurse/imagini/pozafundal3.jpg");
+
+
+}
+h2{
+    color: var(--culoare-verde-inchis);
+}
+body{
+   
+    background-repeat: no-repeat;
+
+    /* background-ul va ramane fix cand dam scroll*/
+    background-attachment: fixed;
+
+    /*imaginea de background sa acopere tot containerul*/
+    background-size: cover;
+    
+
+    --padding-intern: 0.5rem;
+    --padding-body2: 2rem;
+
+    counter-reset: intrebari;
+    min-width:330px;
+    padding-top:0;
+    padding-bottom:var(--padding-body2);
+    padding-right: var(--padding-body2);
+    padding-left: var(--padding-body2);
+
+    /*font google api*/
+    font-family: 'Playfair Display', serif;
+}
+ main{
+    background:rgba(255, 255, 255, 0.308);/*pentru transparenta*/
+}
+
+
+h1{ /* "Floraria" */
+    font-family: 'Merriweather', serif;
+    font-size: 2.2rem;
+    color: var(--culoare-mov-inchis); 
+   
+}
+h1>span{ /* "Rosa" */
+    font-family: 'Satisfy', cursive;
+    font-size: 2.5rem;
+    background: -webkit-linear-gradient(lightgreen,rgb(218, 61, 218)); /*nu pot pune variabile?*/
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+#rosa{
+    display:none;
+}
+
+#grid-pagina{
+    display: grid;
+    grid-template-areas:"zona0 zona0 zona0 zona0 zona0 zona0"
+                        "zona0 zona0 zona0 zona0 zona0 zona0"
+                        "zona3 zona3 zona3 zona2 zona2 zona2"
+                        "zona4 zona4 zona4 zona2 zona2 zona2"
+                        "zona1 zona1 zona1 zona1 zona1 zona1"
+                        "zona5 zona5 zona5 zona5 zona5 zona6"
+                        "zona7 zona7 zona7 zona7 zona8 zona8";
+                        
+
+    grid-gap:0;
+    padding-bottom:var(--padding-body2);
+    
+}
+
+#grid-pagina>section, main>section{
+    border:1px solid var(--culoare-mov-mediu);
+    padding:  20px;
+    border-collapse: collapse;   
+    margin: 1rem;
+}
+.welcome{
+    grid-area: zona0;
+}
+#motto blockquote{
+    text-align: center;
+}
+#sectiune-galerie-animata{
+    grid-area: zona1 !important;
+}
+
+
+
+/*-----------------tabel----------------------*/
+
+#floridinlume{
+    grid-area: zona2;
+    padding: var(--padding-intern);
+}
+#anunturi{
+    grid-area: zona4;
+}
+#orar{
+    grid-area: zona3;
+
+}
+
+#intrebarifrecvente{
+    grid-area: zona7;
+}
+#intrebarifrecvente>h2{
+    padding-left:2rem;
+}
+.zile{
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+}
+.ore{
+    text-align: center;
+    color:var(--culoare-mov-inchis);
+
+}
+
+
+/*------------------COUNTER pentru intrebarile frecvente---------------*/
+#intrebarifrecvente summary::before{
+
+    counter-increment: intrebari;
+    content:  counter(intrebari) ".";
+}
+#filmulete{
+    grid-area: zona5;
+}
+#harta{
+    grid-area:zona8;
+    font:bold;
+}
+#informatiiextra{
+    grid-area:zona6;
+    
+}
+#informatiiextra>div{
+    padding:0.1rem;
+}
+  
+p{
+    color: var(--culoare-verde-inchis);
+}
+
+/*------------------------link-top--------------*/
+
+.link-top{
+
+  /*background-color: #4CAF50;*/
+  position:fixed;
+  display: block;
+  overflow:visible;
+  bottom:0.3rem;
+  right:0.3rem;
+  border-radius:50%;
+   
+  background-color: var(--culoare-verde-deschis);
+  
+  /*margin: 10px;*/
+  cursor: pointer;
+  border-width: 2px var(--culoare-mov-inchis) solid;
+  box-shadow: 1px 1px 10px var(--culoare-mov-inchis);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-bottom: 5px;
+  opacity: 0.7;
+  transition: opacity 700ms;
+ 
+}
+.link-top>a{
+    color:var(--culoare-mov-inchis);
+    text-align: center;
+    text-decoration:  none;
+    font-weight: bold;
+    font-size: 1rem;
+    font-weight: bold;
+    
+}
+.link-top:hover{
+    text-decoration: none;
+    opacity:1;
+    background-color: var(--culoare-verde-mediu);
+    
+}
+.link-top .tooltiptext {
+    visibility: hidden;
+    width: 80px;
+    font-size: 0.8rem;
+    background-color:var(--culoare-mov-deschis);
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 105%;
+  }
+.link-top:hover .tooltiptext{
+    visibility: visible;
+}
+/* ---------------------------stilizare HR---------------------*/
+#stilizare-hr{
+    border:none;
+    width:100%
+    
+}
+#stilizare-hr::before{
+    
+    display:block;
+    content:"";
+    border-bottom: 2px double var(--culoare-mov-inchis);
+    border-top: none;
+    height: 20px;
+    border-radius: 15px;
+ 
+}
+
+#stilizare-hr::after{
+
+    display: block;
+    content:"";
+    border-top: 2px double var(--culoare-mov-inchis);
+    margin-top:-2px; 
+    border-bottom: none;
+    border-radius: 15px;
+    height:20px; 
+   
+}
+/*------------------stilizare taburi iframe-------------*/
+#coloane{
+    
+    display:flex;
+    flex-direction: row;
+    
+}
+#coloane iframe{
+    display: flexbox;
+    flex-shrink: 2;
+}
+
+#coloane .iframe_tabs{
+
+    display:flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    grid-area:z2;
+
+    /*margin-left: -6.5rem; */
+}
+
+/*tranzitia de culori la ancore*/
+.iframe_tabs>a{
+   
+    text-decoration: none;
+    font-size: 0.8rem;
+    padding:var(--padding-intern);
+    border: 1px solid var(--culoare-mov-inchis);
+    text-align: right;
+    border-left: none;
+    border-bottom-right-radius:10px;
+    border-top-right-radius: 10px;
+    background-color: var(--culoare-mov-mediu);
+    transition:background-color 0.7s linear, width 0.3s linear;
+}
+.iframe_tabs>a:hover{
+    background-color: var(--culoare-mov-tranzitie);
+    width: 102%;
+
+}
+
+/*----------alte modificari--------------*/
+
+
+#mesaj>ul{
+    color:var(--culoare-verde-inchis);
+    padding-left:1rem;
+    margin-left:0;
+}
+footer{
+    font-size: 0.9rem;
+    color: var(--culoare-verde-inchis);
+}
+p b{
+    color:rgb(14, 68, 37);
+}
+
+#watermark
+{
+    display:none;
+}
+#useri th, #useri td
+{
+    width:6rem;
+    text-align: center;
+}
+
+/*---------------------------print-------------------------------*/
+@media print{
+    
+    body{
+        background-color: var(--culoare-verde-deschis);
+        font-size:1rem;
+        padding:0;
+        margin:0;
+
+    }
+    /*meniul ascuns+ elemente media */
+    .link-top, #clip-video, .meniu, #filmulete, #galerie-statica{
+        display: none; 
+    }
+    h1{
+        font-size: 2.5rem;
+        text-decoration: underline;
+        margin-top: 50%;
+        margin-right:0;
+        page-break-after: always; 
+		text-align:center;
+		margin-left:1cm;
+    }
+    #rosa{
+        display:inline;
+    }
+ 
+  
+    h1>span
+    {
+        
+        display:none;
+    }
+    
+     a /*linkurile din pagina nu apar colorate sau subliniate*/
+     {
+        text-decoration: none;
+        color: var(--culoare-verde-inchis);
+    }
+    footer  {
+        page-break-before: always;
+    }
+
+    #watermark
+    {
+        font-size: 0.85rem;
+        text-align: center;
+        display:block;
+        position:fixed;
+        right:0;
+        color:rgba(0,0,0,0.4);
+		bottom:0;
+
+    }
+    #watermark::after{
+			
+        opacity:0.65;
+        width:100px;
+        height:2cm;
+        display: block;
+        background: white;
+        border: grey 2px double;
+        content:"Copyright Ifrosă Diana Maria";
+    }
+    #sectiune-galerie-animata
+    {
+        display: none;
+    }
+    
+    @page {
+        size: A4 portrait;
+        padding:0;
+        counter-increment: page;
+                
+        }
+    @page :left {
+        margin-left: 2.5cm;
+        margin-right:0.5cm;
+          }
+          
+    @page :right {
+        margin-right: 2.5cm;
+        margin-left: 0.5cm;
+          }
+
+     #banner{
+        position: absolute !important;
+    
+        animation:none !important; 
+        visibility: visible;
+        top: 0;
+        
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 0 auto;
+        width:80%;
+       
+		text-align:center;
+        border: black 2px dotted;
+
+     }   
+       
+
+}
+
+
+
+
+

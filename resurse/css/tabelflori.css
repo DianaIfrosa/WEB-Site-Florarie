@@ -1,0 +1,61 @@
+#floridinlume{
+    overflow-x: auto;
+}
+
+#floridinlume table{
+    border: 2px groove var(--culoare-mov-mediu);
+    width:25rem;
+    margin:1rem;
+    text-align:center;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: bolder;
+    font-size: 0.7rem;
+    border-spacing: 1px; /*Tabelul va avea spatiu de 1px între borderele celulelor.*/
+
+}
+#floridinlume table td, #floridinlume table th{
+
+    border: 2px solid var(--culoare-mov-inchis);
+    padding:0.3rem;
+    
+}
+#floridinlume table thead>tr{
+    background-image:  url("/resurse/imagini/patterncaptabel.jpg");
+    color: var(--culoare-alb);
+    height: 1.5rem;
+    background-repeat: initial;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#floridinlume table tbody tr>th{
+    font-family: 'Akaya Kanadaka', cursive;
+}
+#floridinlume tr:nth-child(2),#floridinlume tr:nth-child(4),#floridinlume tr:nth-child(6) {
+    transition:background-image .7s linear;
+    background-color: var(--culoare-mov-tranzitie);
+}
+/*doar pentru td ca sa nu se schimbe si capul de tabel*/
+#floridinlume tr:nth-child(2):hover td , #floridinlume tr:nth-child(4):hover td, #floridinlume tr:nth-child(6):hover td{
+    background-image:  url("/resurse/imagini/patterntabel1.jpg");
+    background-repeat: initial;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#floridinlume tr:nth-child(1), #floridinlume tr:nth-child(3), #floridinlume tr:nth-child(5) {
+    transition:background-image .7s linear;
+    background-color: var(--culoare-mov-deschis);
+}
+/*doar pentru td ca sa nu se schimbe si capul de tabel*/
+#floridinlume tr:nth-child(1):hover td, #floridinlume tr:nth-child(3):hover td, #floridinlume tr:nth-child(5):hover td {
+    background-image:  url("/resurse/imagini/pozafundal.jpg");
+    background-repeat: initial;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#floridinlume>h2{
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+
+}
+

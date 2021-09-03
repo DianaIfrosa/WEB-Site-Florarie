@@ -1,0 +1,55 @@
+@import "meniu-500.css"; 
+@import "galerie-statica-500.css";
+
+html{
+    font-size: 14px;
+}
+
+body{
+    --body-padding:3%;
+    --inaltime-meniu:2rem;
+    padding: var(--body-padding);
+}
+h1{
+    text-align: center;
+}
+/*am o singura coloana*/
+#grid-pagina{
+    display: grid;
+    grid-template-areas:"zona0"
+                        "zona2"
+                        "zona2"
+                        "zona3"
+                        "zona4"
+                        "zona5"
+                        "zona6"
+                        "zona7"
+                        "zona9"
+                        "zona8"
+                        "zona1";                   
+
+    grid-gap:0;
+    padding-bottom:var(--padding-body2);
+    
+}
+
+section{
+    margin:1rem;
+}
+
+iframe{
+    max-width:230px;
+    max-height:200px;
+}
+
+footer{
+    padding:1rem;
+    color: var(--culoare-mov-inchis);
+    font-size: bold;
+}
+footer p{
+    color: var(--culoare-mov-inchis);
+    font-size: bold;
+}
+
+

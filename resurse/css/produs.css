@@ -1,0 +1,23 @@
+#art-produs{
+    display: grid;
+    grid-template-areas:"nume nume" 
+                        "imagine lista-produs"
+                    ;            
+    
+     
+     grid-gap:0;
+     padding:var(--padding-intern);      
+     font-weight: bold;   
+     color:var(--culoare-verde-inchis);     
+    
+    }
+.nume{grid-area: nume;}
+#art-produs>figure {grid-area: imagine;}
+#lista-produs{ grid-area: lista-produs; margin-left: -5rem;}
+
+img{height:300px; width:230px; padding:0;}
+
+#art-produs span{
+    font-weight: normal !important; 
+    color:var(--culoare-mov-inchis);
+}

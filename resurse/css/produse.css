@@ -1,0 +1,62 @@
+main{
+    padding:var(--padding-intern);
+}
+
+
+#grid-produse{display:block;}
+.produs{
+
+display: grid;
+grid-template-areas:"nume nume" 
+                    "imagine categorie"
+                    "imagine descriere"
+                    "lista descriere"
+                ;            
+
+ grid-template-columns: 2fr 3fr;
+ grid-gap:0;
+ padding:0;      
+ margin:0;
+ font-weight: bold;   
+ color:var(--culoare-verde-inchis);    
+
+}
+#lista-prod{
+
+    grid-area: lista;
+    margin:0;
+    border:3px black dotted;
+    font-size:0.9rem;
+    
+}
+
+.nume{ grid-area: nume; text-align: center;}
+.produs>figure{
+    grid-area: imagine; 
+    padding:0;
+    margin-left:6rem;
+
+}
+.categorie {
+   grid-area: categorie; 
+   margin-top:7rem;
+   margin-left:1rem;
+}
+.descriere {
+    grid-area: descriere;
+    margin-top:-1rem;
+    margin-left:1rem;
+ 
+}
+
+img{height:270px; width:200px; padding:0; margin:0; align-self: center;}
+.produs span{
+    font-weight: normal !important; 
+    color:var(--culoare-mov-inchis);
+}
+
+#filtre{
+    padding:10px;
+    background:rgba(224, 155, 252, 0.301);/*pentru transparenta*/
+    width:30rem;
+}

@@ -1,0 +1,141 @@
+body{
+
+    --inaltime-meniu: 4rem;
+    background-color: var(--culoare-verde-deschis);
+   
+}
+nav ul.meniu ul{
+    display: none; /*ascuns*/
+	position:absolute; /* sa nu deplaseze continutul cand devine vizibil*/
+	width:100%;
+
+}
+nav {
+    height:var(--inaltime-meniu);
+    width:100%;
+    
+    top:0; /*the top property behaves like its position is relative when the element is inside the viewport, and like its position is fixed when it is outside.*/
+    padding:0;
+    background-color: var(--culoare-mov-mediu);
+    z-index:10;
+    position: sticky; /*sa ramana sus cand derulez*/
+   
+}
+nav ul.meniu>li{ /*acasa, buchete de flori etc*/
+    float: left;
+    width: 6rem;
+    position: relative;   
+    
+}
+nav li{
+   
+    height: var(--inaltime-meniu);
+    font-size: 0.8rem;
+   
+}
+ 
+nav ul, nav li{
+    padding:0;
+    margin:0;
+
+}
+nav ul.meniu li, nav ul.meniu form{  /*toate din cadrul meniului*/
+    text-align:center;
+    list-style-type: none;
+    background-color: var(--culoare-mov-mediu);
+    transition: background-color 2s;
+    cursor:pointer;
+
+}
+nav ul.meniu li a, nav ul.meniu li>div{ /* cum arata ancorele/numele din meniu */
+    text-decoration: none;
+    color:black;
+    display: block;
+    font-weight:bold;
+    height:var(--inaltime-meniu);
+    line-height:var(--inaltime-meniu);
+    outline:1px groove var(--culoare-mov-inchis);
+    
+}
+nav ul.meniu #logout {
+display:grid;
+outline:1px groove var(--culoare-mov-inchis);
+
+/*------------------------------------grid logout ------------------------*/ 
+grid-template-areas: "poza log";
+}
+
+#logout>img {grid-area: poza;height:27px; width:auto;}
+#logout>a {grid-area: log; outline: none; padding:0; margin-left:-2rem; text-align: left;}
+
+nav ul.meniu #login {
+    font-style: oblique;
+    font-size: 0.8rem;
+      
+}
+
+
+nav ul.meniu>li>a:hover::after{ /*aici trb sa pun acel gradient jos*/
+    background-position: right ;
+}
+
+nav ul.submeniu li a{
+
+    transition:  700ms linear; 
+}
+/*-------------bara colorata de jos----------------------*/
+nav ul.meniu>li>a::after{
+    display: block;
+    margin-top: -0.7rem;
+    height: 0.7rem;
+    background: linear-gradient(to left, var(--culoare-mov-deschis) 5%, var(--culoare-mov-mediu) 50%) left;
+    background-size:200%;
+    content:"";
+    transition: 0.7s ease-out;
+
+}
+nav ul.meniu>li>a{
+    transition: background-color 1s linear, color 1s linear; 
+}
+
+nav ul.submeniu li a:hover{ /*cand sunt cu mouse pe casuta din submeniu isi schimba culoarea*/
+    background-color: var(--culoare-mov-tranzitie);
+    color:var(--culoare-verde-inchis);
+
+}
+nav ul.meniu>li ul{
+    transition:  display 700ms linear;
+}
+/*trebuie animatie cand se deschide submeniul?*/
+nav ul.meniu>li:hover>ul{
+    display:block;
+    z-index:15;
+    animation-name: aparitie_submeniu;
+    animation-iteration-count:1;
+    animation-duration:0.3s;
+    animation-fill-mode:forwards;
+    animation-timing-function:linear;
+   
+}
+
+#hamburger{
+    display: none;
+    height: var(--inaltime-meniu);
+}
+#ch-menu{
+    display: none ;
+}
+#hamburger span{
+    height:100%;
+    width:auto;
+  }
+/*animatia pentru submeniu*/
+
+@keyframes aparitie_submeniu{
+    0%{
+        transform: scaleY(0);
+    }
+    100%{
+        transform: scaleY(1);
+    }
+}

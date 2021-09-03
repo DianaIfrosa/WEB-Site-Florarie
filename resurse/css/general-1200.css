@@ -1,0 +1,62 @@
+@import "galerie-statica-1200.css";
+html{
+    font-size:16px;
+}
+body{
+    --body-padding:1.5rem;
+    padding-top:0.5rem;
+    padding-bottom:var(--body-padding);
+    padding-right: var(--body-padding);
+    padding-left: var(--body-padding);
+    margin:0;
+}
+iframe{
+    max-width:500px;
+    width:100%;
+}
+#grid-pagina{
+    display:grid;
+    /*grid-template-columns: 2fr 3fr;*/
+    grid-template-areas: "zona0 zona0 zona0"
+                         "zona0 zona0 zona0"
+                         "zona3 zona2 zona2"
+                         "zona4 zona2 zona2"
+                         "zona7 zona7 zona7"
+                         "zona5 zona5 zona6"
+                         "zona8 zona8 zona8";
+
+    grid-gap:0;
+}
+
+.iframe_tabs>a:hover{
+    background-color: var(--culoare-mov-tranzitie);
+    width:initial;
+   
+}
+/*----------------------------------------meniu-------------------------------------------------------*/
+
+/*nu afisez textele de langa iconuri*/
+#textacasa{ 
+    display:none;
+}
+
+#textinformatii{
+    display:none;
+}
+
+/*fac mai mic containerul pt home*/
+nav ul.meniu>li:nth-child(1){ 
+   width:4.5rem;      
+}
+/*fac mai mic containerul pt informatii*/
+nav ul.meniu>li:nth-child(7){ 
+    width:3rem;      
+}
+
+/*nu afisez banner pe ecran mediu si mic(se mosteneste)*/
+#banner{
+    display:none;
+}
+
+
+

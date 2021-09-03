@@ -1,0 +1,87 @@
+/*facem vizibil iconul de hamburger meniu*/
+
+#hamburger{
+    display:block;
+    height: var(--inaltime-meniu);
+    padding:0;
+}
+
+h1{
+    text-align: center;
+}
+/* implicit meniul e ascuns*/
+ul.meniu{
+    display:none;
+    position:absolute;
+    text-align: center;
+    width:100%; 
+}
+
+nav ul.meniu>li:nth-child(1){ 
+    text-align: center;
+    width:100%;     
+ }
+ /*fac mai mic containerul pt informatii*/
+ nav ul.meniu>li:nth-child(7){ 
+     text-align: center;
+     width:100%;      
+ }
+
+nav li{
+   
+    height: var(--inaltime-meniu);
+    font-size: 0.8rem;  
+}
+
+/*aici facem vizibil meniul cand facem click pe hamburger menu*/
+#ch-menu:checked+ul.meniu{
+    
+    display:block;
+    opacity:1;
+    animation-name: deschidere-meniu;
+    transform-origin: top left;
+    transform: rotate(-90deg);
+    animation-duration: 1s;
+    animation-fill-mode:forwards;
+    
+    transition-timing-function:ease-in;
+
+}
+@keyframes deschidere-meniu{
+
+ 0%{
+     opacity:0;
+ }
+ 100%{
+     opacity:1;
+     transform: rotate(0deg);
+ }
+}
+
+/*nu mai afiseaza bara glisanta*/
+nav ul.meniu>li>a::after{ 
+    display:none;
+}
+nav ul.meniu>li:hover, nav ul.meniu>li>div:hover{ /*cand sunt cu mouse pe casuta isi schimba culoarea*/
+    background-color: var(--culoare-mov-tranzitie);
+
+}
+
+/*optiunile se intind pe toata latimea containerului*/
+nav ul.meniu li{
+    width:100%;
+}
+
+/*meniul sa vina deasupra continutul de mai jos, fara sa impinga continutul*/
+nav ul.meniu>li ul{
+    position:absolute;
+    width:100%;
+    z-index:20;
+}
+
+/* pentru fiecare element din submeniu generam un triunghiulet alb inaintea lui*/
+nav ul.meniu>li li a::before{
+    content:"\25B7\00A0"; /*triunghi*/
+    color:white;
+
+}
