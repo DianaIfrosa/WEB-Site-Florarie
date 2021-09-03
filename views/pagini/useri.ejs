@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    
+    <meta name="keywords" content="flori, florarie, floare, buchete, aranjamente, florale, ocazii, Valentine’s day, 8 Martie, nunta, cosuri flori,livrari, comanda ">
+    <meta name="description" content="Oferim aranjamente și buchete de flori deosebite care încantă sufletele și apropie oamenii. Florăria Rosa face livrări oriunde în țară și dispune de curieri proprii.">
+    <title>Florăria Rosa</title>
+    <%- include("../fragmente/head") %> 
+
+</head>
+    <body>
+    <%- include("../fragmente/header") %>
+
+    <main>
+    <div class="afisaj">
+        <h2>Useri</h2>
+
+		<table id="useri">
+		  <tr>
+			<th>Username</th><th>Nume complet</th><th>Tip</th><th>Buton</th>
+		  </tr>
+
+		  <% for (var i = 0; i < useri.length; i++) { 
+				if(useri[i].rol=="comun"){
+				%>
+				<tr>
+				  <td><%= useri[i].username %></td>
+				  <td><%= useri[i].nume %> <%= useri[i].prenume %></td>
+				  <td><%= useri[i].rol %></td>
+                  <td>
+		                <form id="sterge" method="post" action="/modif-parola">
+			                    <label hidden>
+				                Id: <input type="text" name="id_utiliz" value="<%=useri[i].id%>" hidden>
+			                    </label>
+			
+			                        <input type="submit" value="resetează parolă utilizator">
+		                </form>
+                    </td>
+		      
+				</tr> 
+   
+				<% } %>			
+		  <% } %>
+		</table>
+	
+	</div>
+</main>
+
+
+    <%- include("../fragmente/footer") %>
+
+</body>
+</html>

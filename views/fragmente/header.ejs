@@ -1,0 +1,69 @@
+ <header>
+    <div id="banner">Disclaimer: Acesta este un proiect școlar!</div>
+    <h1 id="start">Florăria  <div id="rosa"> Rosa</div> <span> Rosa</span></h1>
+</header>  
+        <nav>
+            <label id="hamburger" for="ch-menu">
+                <span class="fas fa-bars"></span>
+            </label>
+            <input id="ch-menu" type="checkbox">
+            <ul class="meniu">
+                <li><div><a href="/index#start"><span class="fas fa-home"></span><span id="textacasa">Acasă</span></a></div>
+                    <ul class="submeniu">
+                        <li><a href="/index#galerie-statica">Bestsellers</a></li>
+                        <li><a href="/index#intrebarifrecvente">Întrebări</a></li>
+                        <li><a href="/index#orar">Program</a></li>
+                    </ul>
+
+                </li>
+                <% if (!locals.utilizator) { %>
+                    <li><a href="/inregistrare"> Înregistrare</a></li>
+                <% }  %>
+                <li><a href="/galerie-pag">Galerie</a></li>
+                <li><div>Produse</div>
+                    <ul class="submeniu">
+                        <li><a href="/produse">Toate</a></li>
+                        <li><a href="/produse?tip=buchet">Buchete</a></li>
+                        <li><a href="/produse?tip=cutie">Cutii flori</a></li>
+                        <li><a href="/produse?tip=criogenat">Criogenate</a></li>
+                    </ul>
+                </li> 
+                
+                <li><a href="/informatii"><span class="fas fa-info-circle"></span><span id="textinformatii">Informații</span></a> </li>
+                
+                <!--apare doar pentru admin o sectiune speciala -->
+                <% if (locals.utilizator && locals.utilizator.rol=="admin") { %> 
+                    <li><a href="/useri">Utilizatori</a></li>
+                <% } %>
+                <% if (locals.utilizator && locals.utilizator.rol=="comun") { %> 
+                    <li><a href="/comenzi">Comenzi</a></li>
+                <% } %>
+                <% if (!locals.utilizator) { %>
+                    
+                    <form id="login" method="post" action="/login">
+                        
+                        <label>
+                            Username: <input type="text" name="username" value="">
+                        </label>
+                        <br>
+                        <label>
+                            Parola: <input type="password" name="parola" value="">
+                        </label>
+            
+                        <input type="submit" value="Login">
+                    </form>
+               
+                    <% } 
+                    else{ %>
+                            
+                            <li id="logout">
+                               
+                            <img src="<%-locals.utilizator.imagine%>">   
+                            <a href="/logout">Logout</a> 
+                            </li>
+                             <%
+                    } %>
+
+            </ul>
+
+        </nav>

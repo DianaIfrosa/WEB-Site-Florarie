@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    
+    <meta name="keywords" content="flori, florarie, floare, buchete, aranjamente, florale, ocazii, Valentine’s day, 8 Martie, nunta, cosuri flori,livrari, comanda ">
+    <meta name="description" content="Oferim aranjamente și buchete de flori deosebite care încantă sufletele și apropie oamenii. Florăria Rosa face livrări oriunde în țară și dispune de curieri proprii.">
+    <title>Florăria Rosa</title>
+    <%- include("../fragmente/head") %> 
+    <script type="text/javascript" src=/resurse/js/inregistrare.js></script>
+
+</head>
+    <body>
+    <%- include("../fragmente/header") %>
+
+    <main>
+    <div class="afisaj">
+        <h2>Înregistrare utilizator</h2>
+        
+		<% if (locals.err !="") { %>
+		<form id="form_inreg"  method="post" class="date"  action="/inregistrare" id="inregistrare" enctype="multipart/form-data">
+			
+			<p>
+				<label>
+					Nume: <input type="text" name="nume" value="Popescu" required>
+				</label>
+			</p>
+			<p>
+				<label>
+					Prenume: <input type="text" name="prenume" value="Maria" required>
+				</label>
+			</p>
+            <p>
+				<label>
+					Username: <input type="text" name="username"  value="test<%= Math.floor(Math.random()*100) %>" required pattern="^[A-Za-z]{1,8}\d{2}$">
+                    (trebuie să înceapă cu o litera, să se termine cu 2 cifre și să conțină în total maxim 10 caractere)
+                </label>
+			</p>
+			<p>
+				<label>
+					Parola: <input id="parl" type="password" name="parola" value="" required>
+				</label>
+			</p>
+			<p>
+				<label>
+					Reintroduceți parola: <input id="rparl" type="password" name="rparola" value="" required>
+				</label>
+			</p>
+			<p>
+				<label>
+					E-mail: <input type="text" name="email"  size="50" required>
+				</label>
+			</p>
+			<p>
+				<label>
+					Poza: <input type="file" name="poza">
+				</label>			
+			</p>
+			<p>		
+				<input type="submit" value="Trimite">
+				<input type="reset" value="Resetează">
+			</p>
+		</form>
+	<% } %>
+	<% if(locals.raspuns) { %>
+	<%- locals.raspuns+"<br/>"%>
+	<% } %>
+	<% if(locals.err) { %>
+	<%- locals.err %>
+	<% } %>
+    </div>
+</main>
+
+<footer>
+    <%- include("../fragmente/footer") %>
+</footer>
+
+</body>
+</html>

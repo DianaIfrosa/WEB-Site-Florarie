@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    
+    <meta name="keywords" content="flori, florarie, floare, buchete, aranjamente, florale, ocazii, Valentine’s day, 8 Martie, nunta, cosuri flori,livrari, comanda ">
+    <meta name="description" content="Oferim aranjamente și buchete de flori deosebite care încantă sufletele și apropie oamenii. Florăria Rosa face livrări oriunde în țară și dispune de curieri proprii.">
+    <title>Florăria Rosa</title>
+    <%- include("../fragmente/head") %> 
+    <link rel="stylesheet" href="/resurse/css/galerie-animata.css" type="text/css" />
+
+</head>
+<body>
+    <%- include("../fragmente/header") %>
+
+    <main>
+      <div id="grid-pagina">
+        <section class="welcome">
+            <section id="mesaj">
+              <h2>Bine ai venit!</h2>
+              <!----------------------- DARK MODE SIGN--------------------------- -->
+              <input type="checkbox" class="schimbare-tema" id="schimbare-tema" />
+              <label class="label" for="schimbare-tema">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+                  <div class="cerc"></div>
+              </label>
+              <p>
+                  &emsp; Iubim florile și adorăm să vedem oameni fericiți. Ne dăm silința ca produsele noastre să fie memorabile, iar pasiunea noastră să fie emanată prin fiecare petală.
+                  Îți propunem o gamă variată de produse pentru toate vârstele și garantăm <b>calitatea</b> și <b>prospețimea</b> florilor.
+                  <b>Aranjamentele florale</b> sunt pregatite cu drag și atenție pentru a aduce zâmbetul pe buzele clienților noștri.
+                  <br> Florăria Rosa livrează în <b>București</b> și în toată țara prin intermediul propriilor curieri, în cel mai scurt timp.
+                  <br> Comandă cu încredere de la noi:
+              </p>
+              <ul>
+                  <li>Buchete de flori</li>
+                  <li>Coșuri de flori</li>
+                  <li>Cadouri deosebite</li>
+                  <li>Trandafiri criogenați</li>
+              </ul>
+  
+              <div id="clip-video">
+                <video width="420" height="340"  poster="/resurse/imagini/thumbnail.jpg" controls preload="none">
+                    <source src="/resurse/video/Flowers.mp4" type="video/mp4">
+                    <source src="/resurse/video/Flowers.ogv" type="video/ogv">
+                    <track default src="/resurse/video/tracks/captions-flori.vtt" kind="captions" srclang="ro" label="romana">
+                    <track src="/resurse/video/tracks/captions-flori-en.vtt" kind="captions" srclang="en" label="engleza">
+                    
+                </video>
+
+              </div>
+
+            </section> 
+            
+            <%- include("../fragmente/galerie-statica",{imagini: locals.imagini}) %> 
+            
+            <section id="motto">
+                <h3>Mottoul nostru</h3>
+                <blockquote cite="https://booknation.ro/citate-despre-flori/">"Florile fac întotdeauna oamenii mai buni, mai fericiți, mai săritori, ele sunt soare, mâncare și medicament pentru suflet!" Luther Burbank </blockquote>
+               
+            </section>
+        </section>
+        <section id="filmulete">
+            <p>Calmul naturii ne dă întotdeauna speranță că totul va fi bine. Vă prezentam câteva dintre videoclipurile noastre preferate în materie de flori.</p> 
+            <div id="coloane">
+                
+                <iframe name="ifr" width="560" height="315" src="https://www.youtube.com/embed/UBxqd8c8fF4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class=iframe_tabs>
+                    <a href="https://www.youtube.com/embed/LjCzPp-MK48" target="ifr">Miracolele naturii</a>
+                    <a href="https://www.youtube.com/embed/UBxqd8c8fF4" target="ifr">DIY Buchet de flori  </a>
+                    <a href="https://www.youtube.com/embed/TVEoIyLA9IE" target="ifr">Frenezia lalelelor</a>
+                    
+            </div>
+                    
+            </div>
+        </section>
+        
+        <section id="intrebarifrecvente">
+            <h2>Întrebări frecvente</h2>
+            <details>
+                <summary> Pot trimite flori unei persoane cu anonimat?</summary>
+                <p>Desigur! Firma noastră poate păstra anonimatul clienților, căci adorăm surprizele. La plasarea comenzii, în secțiunea "Informații adiționale" poate fi cerut acest lucru, iar adresa trebuie să fie cea unde se dorește livrarea produselor.</p>
+            </details>
+            <details>
+                <summary> Pot ridica produsele direct de la sediu?</summary>
+                <p>Da! Acest lucru este posibil, însa este obligatorie respectarea regulilor de distanțare socială și purtarea măștii de protecție în mod corect.</p>
+            </details>
+            <details>
+                <summary> Se pot returna produsele?</summary>
+                <p> Din păcate acest lucru nu este posibil de la distanță, ci doar în mod personal în magazinul nostru, deoarece transportul ar genera prea multe daune asupra aranjamentelor florale. Returnarea se poate face în baza facturii primite odată cu produsele, iar aceasta poate fi refuzată de către specialiștii noștri dacă starea florilor a fost compromisă. Banii vor fi redobândiți pe loc.</p>
+            </details>
+            <details>
+                <summary> Se poate opta și pentru aranjamente florale personalizate?</summary>
+                <p> Desigur! Ne puteți trimite pe adresa noastră de e-mail florariarosa@gmail.com ideile dumneavoastră, iar noi vom reveni cu răspuns în cel mai scurt timp.
+                <br>
+                <strong>Notă: </strong>Aranjamentele florale personalizate vor avea un cost de asemenea personalizat, raportat la tipurile de flori folosite și complexitatea acestora.</p>
+
+            </details>
+            <details>
+                <summary> Cum se obțin trandafii criogenați?</summary>
+                <p>
+                    <dfn>Criogenarea </dfn> presupune trecerea trandafirilor printr-un proces destul de complicat. Este necesară o aparatură specială care funcționează pe bază de vid.
+                    Rezultatul? Trandafiri care își păstrează forma și culoarea celor naturali, dar care, spre deosebire de aceștia, rezistă de la 3 la 25 de ani.
+                </p>
+
+            </details>
+        </section>
+        <section id="informatiiextra">
+            <div><p>Mai multe informații despre meseria de florist – designer florist – master florist <a href="https://aadf.ro/cine-este-florist/" target="_blank"> aici</a>.</p></div>
+        </section>
+        
+        
+        <section id="anunturi">
+            <h3>Anunțuri</h3>
+            <p>Din cauza restricțiilor în vigoare, vă anunțăm că în magazinul nostru au voie doar <b> 3 clienți </b> simultan, iar <b>purtarea măștii este obligatorie</b>! Clienții ce aleg plata cu cardul beneficiază de <b>o fundiță decorativă</b> cadou din partea noastră!</p>
+        </section>
+        <section id="floridinlume">
+            <h2>5 cele mai vândute flori </h2>
+            <div id="container-tabel">
+              <table class="tabel">
+                      <thead>
+                          <tr>
+                              <th>Țara</th>
+                              <th colspan="5">Florile</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <th scope="row">USA</th>
+                              <td>Petunie</td>
+                              <td>Crin</td>
+                              <td>Margaretă</td>
+                              <td>Pansia</td>
+                              <td>Frezie</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">UK</th>
+                            <td>Mușcată </td>
+                            <td>Narcisă</td>
+                            <td>Orhidee</td>
+                            <td>Bluebell</td>
+                            <td>Begonie</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Filipine</th>
+                            <td>Trandafir</td>
+                            <td>Orhidee</td>
+                            <td>Gladiolă</td>
+                            <td>Aster</td>
+                            <td>Ylang Ylang</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Canada</th>
+                            <td>Garoafă</td>
+                            <td>Floarea-soarelui</td>
+                            <td>Gardenie</td>
+                            <td>Ciclamen</td>
+                            <td>Mușcată</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Australia</th>
+                            <td>Trandafir</td>
+                            <td>Waratah</td>
+                            <td>Protea</td>
+                            <td>Orhidee</td>
+                            <td>Magnolie</td>
+                        </tr>
+
+                      </tbody>
+                      <tfoot></tfoot>
+                </table>
+            </div>
+               
+        </section>
+        
+        <section id="orar">
+            <p class="zile">Luni, marți, miercuri, joi</p>
+            <p class="ore">orele 10-18</p>
+            <p class="zile">Vineri, sâmbătă</p>
+            <p class="ore">orele 10-14</p>
+            <p class="zile">Duminică</p>
+            <p class="ore"> închis</p>
+        </section>
+        <section id="harta">
+            <p>Vă așteptăm în magazinul nostru! </p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2788.613549939108!2d25.62439171474867!3d45.658581928474206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b35c738e139adf%3A0x701e63222674d2aa!2sStrada%20Rozelor%2017%2C%20Bra%C8%99ov!5e0!3m2!1sro!2sro!4v1629131883517!5m2!1sro!2sro" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+
+
+   
+
+    <section id="sectiune-galerie-animata">
+        <h2>Galerie animată</h2>
+        <p>
+            Apropie mouse-ul pentru a te bucura și mai mult de fotografia preferată!
+        </p>
+        <div id="galerie-animata">
+            <% for (var i=locals.imagini.length-1;i>=locals.imagini.length-localStorage.getItem("nrrandom");i--){  %>
+                <figure>
+                    <picture>
+                        <img src="/<%-locals.imagini[i].mare%>" alt="<%-locals.imagini[i].titlu%>"/>
+                    </picture>
+                <figcaption><%-locals.imagini[i].descriere%></figcaption>
+            </figure>
+            <% } %>
+        </div>
+    </section>
+    </div>
+
+    <p id="watermark"></p>
+
+    
+
+    </main>
+    <br>
+    
+    <%- include("../fragmente/footer") %>
+ 
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    
+    <meta name="keywords" content="flori, florarie, floare, buchete, aranjamente, florale, ocazii, Valentine’s day, 8 Martie, nunta, cosuri flori,livrari, comanda ">
+    <meta name="description" content="Oferim aranjamente și buchete de flori deosebite care încantă sufletele și apropie oamenii. Florăria Rosa face livrări oriunde în țară și dispune de curieri proprii.">
+    <link href="/resurse/css/produs.css" type="text/css" rel="stylesheet" />
+    <title>Florăria Rosa</title>
+    <%- include("../fragmente/head") %> 
+    
+
+</head>
+    <body>
+    <%- include("../fragmente/header") %>
+
+    <main>
+        <section >
+            <h2>Pagină artc-<span class="val-id"><%- locals.prod.id%></span></h2>
+                    <article id="art-produs">
+                        <figure>
+                            <img src="/resurse/imagini/produse/<%- locals.prod.imagine %>"  alt="[imagine <%- locals.prod.nume %>]" />
+                        </figure>
+                        <h3 class="nume">Denumire produs: 
+                            <span class="val-nume"> 
+                                <%- locals.prod.nume%>
+                             </span> 
+                        </h3>
+                        <ul id="lista-produs">
+                            <li class="pret">Preț: <span class="val-pret"><%- locals.prod.pret%></span> lei</li>
+                            <li class="categorie">Categorie: <span id="val-categorie"><%-locals.prod.tip%></span></li> 
+                            <li class="la_promotie">Acest produs este la promoție: 
+                                <span class="val-promotie">
+                                <% if(locals.prod.la_promotie==1){ %>
+                                DA
+                                <%} else {%>
+                                NU
+                                <%}%></span>
+                            </li>
+                            <li class="culoare_predominanta">Culoare predominantă: <span class="val-culoare-predominanta"><%- locals.prod.culoare%></span></li>
+                            <li class="recomandare">Recomandare anotimp: <span class="val-recomandare"><%- locals.prod.recomandare%></span></li>
+                            <li class="nr_fire">Număr fire: <span class="val-nr-fire"><%- locals.prod.nr_fire%></span></li>
+                            <li class="floare_predom"> Floarea principală: <span class="val-floare-predom"><%- locals.prod.flori_predominante%></span></li>
+                            
+                            <li class="descriere">Descriere: <span id="val-descriere"><%-locals.prod.descriere%> </span></li>   
+                        </ul>
+                       
+                    </article>
+            </div>
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>

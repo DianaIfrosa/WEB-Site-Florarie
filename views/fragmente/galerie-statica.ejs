@@ -1,0 +1,19 @@
+<section id="galerie-statica">
+    <h2>Cele mai frumoase produse din colecția noastră</h2> 
+                    <div id="grid-galerie">
+                        <% for (let imag of locals.imagini){  %>
+                            <figure>
+                                <picture title="text_descriere">
+                                    <!-- il ia pe primul care se potriveste cu query-ul din media-->
+                                    <source srcset="/<%-imag.mic%>" media="(max-width:690px)"/>
+                                    <source srcset="/<%-imag.mediu%>" media="(max-width:1200px)"/>
+                                    <img src="/<%-imag.mare%>" alt="<%-imag.titlu%>" title="<%-imag.descriere%>"/>
+                         
+                                </picture>
+                                <figcaption><%-imag.descriere%></figcaption>
+                            </figure>
+                            <% } %>
+  
+                    </div>        
+               
+            </section>

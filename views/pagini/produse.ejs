@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    
+    <meta name="keywords" content="flori, florarie, floare, buchete, aranjamente, florale, ocazii, Valentine’s day, 8 Martie, nunta, cosuri flori,livrari, comanda ">
+    <meta name="description" content="Oferim aranjamente și buchete de flori deosebite care încantă sufletele și apropie oamenii. Florăria Rosa face livrări oriunde în țară și dispune de curieri proprii.">
+    <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" /> 
+    <title>Florăria Rosa</title>
+    <%- include("../fragmente/head") %> 
+    <script type="text/javascript" src=/resurse/js/produse.js></script>
+
+</head>
+    <body>
+    <%- include("../fragmente/header") %>
+
+    <main>
+        <br>
+        <!-- text area -->
+        <div id="filtre">
+         <div id="filtrare-nume">
+            <label> Nume produs : 
+            <textarea id="inp-nume"></textarea>
+            </label> 
+        </div>
+         <!--range -->
+        <div id="filtrare-pret"><label> Pret maxim:
+            <%- locals.pretminim %>
+                <input type="range" id="inp-pret" min="<%- locals.pretminim %>"  value="0"
+                 max="<%- locals.pretmaxim %>"  oninput="this.nextElementSibling.value = this.value">
+            <%- locals.pretmaxim %>
+            (<output> <%- locals.pretminim %></output>)
+          
+        </label>
+        </div>
+        <!-- text simplu -->
+        <div id="filtrare-cuvinte-cheie"><label> Cuvânt cheie : <input type="text" id="inp-cuvinte-cheie" value="trandafir"></label> </div>
+        
+        <!-- radio buttons -->
+        <div id="filtrare-promotie">
+            Caut produs la promotie:
+            <div>
+            <input type="radio" id="rasp-nu-conteaza" name="promotie" value="Nu conteaza" checked>
+            <label for="Nu conteaza">Nu conteaza</label><br>
+            <input type="radio" id="rasp-da" name="promotie" value="da">
+            <label for="da">Da</label><br>
+            <input type="radio" id="rasp-nu" name="promotie" value="nu">
+            <label for="nu">Nu</label>
+            </div>
+
+        </div>
+
+         <!--select simplu-->
+        <label>Culoarea predominanta:
+            <select id="inp-categorie">
+                <option value="oricare">oricare</option>
+                <% for( let categorie of locals.categorii) { %>
+                    <option value="<%- categorie.categ %>"><%- categorie.categ %></option>
+                <% } %>
+            </select>
+        </label>
+        
+        <!-- select multiplu-->
+        <label>Cautati dupa anotimpul recomandat:
+            <select id="sel_multiplu" multiple size="3">
+                <option value="iarna">iarna</option>
+                <option value="primavara" selected>primavara</option>
+                <option value="vara">vara</option>
+                <option value="toamna">toamna</option>
+            </select>
+        </label>
+        </div>
+
+        <p>
+        <button id="filtrare">Filtreaza</button>
+        <button id="sortCrescNume">Sorteaza crescator dupa nume</button>
+        <button id="sortDescrescNume">Sorteaza descrescator dupa nume</button>
+        <button id="resetare">Reseteaza</button>
+        <button id="suma_preturi">Suma preturi</button>
+    
+        </p>
+        <section id="produse">
+            <h2>Produse</h2>
+            <div class="grid-produse">
+                <% for( let prod of locals.produse) { %>
+                    <article class="produs">
+                        <figure>
+                            <img src="/resurse/imagini/produse/<%- prod.imagine %>"  alt="[imagine <%- prod.nume %>]" />
+                        </figure>
+                        <h3 class="nume">Denumire produs: <a href="/produs/<%-prod.id %>" >
+                            <span class="val-nume"> 
+                                <%- prod.nume%>
+                             </span> 
+                            </a>
+                        </h3>
+                        <!-- am sters un div care incepea de aici, numit info-prod -->
+                            <ul id="lista-prod">
+                            <li class="pret">Preț: <span class="val-pret"><%- prod.pret%></span> lei</li>
+                            <li class="culoare_predominanta">Culoare predominantă: <span class="val-culoare-predominanta"><%- prod.culoare%></span></li>
+                            <li class="recomandare">Recomandare anotimp: <span class="val-recomandare"><%- prod.recomandare%></span></li>
+                        
+                            <li class="la_promotie">Acest produs este la promoție: 
+                                <span class="val-promotie">
+                                <% if( prod.la_promotie==1){ %>
+                                    DA
+                                <%} else {%>
+                                    NU
+                                <%}%></span></li>
+                            </ul>
+                            <p class="categorie">Categorie: <span class="val-categorie"><%-prod.tip%></span></p> 
+                            <p class="descriere">Descriere: <span class="val-descriere"><%-prod.descriere%> </span></p>   
+
+                       
+                     
+                        
+                    </article>
+                <% }%>
+            </div>
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>
