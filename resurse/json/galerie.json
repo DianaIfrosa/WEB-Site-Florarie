@@ -1,0 +1,130 @@
+{
+	"cale_galerie":"resurse/imagini/galerie",
+	"imagini": [
+		{
+			"cale_fisier":"buchetorhidee.jpg",
+			"titlu":"Buchet de orhidee",
+			"text_descriere":"Un minunat buchet de orhidee creat de echipa noastra",
+			"anotimp":"vara, primavara"
+		},
+		{
+			"cale_fisier":"buchetmireasa.jpg",
+			"titlu":"Buchet mireasa",
+			"text_descriere":"Flori pentru o ocazie speciala",
+			"anotimp":"vara, primavara, iarna"
+		},
+		{
+			"cale_fisier":"buchetmixt.jpg",
+			"titlu":"Buchet mixt in vaza",
+			"text_descriere":"Un buchet colorat mixt",
+			"anotimp":"vara, toamna"
+		},
+		{
+			"cale_fisier":"buchetmixt2.jpg",
+			"titlu":"Buchet roz mixt",
+			"text_descriere":"Buchet roz de diverse flori",
+			"anotimp":"vara, primavara"
+		},
+		{
+			"cale_fisier":"buchettrandafiri.jpg",
+			"titlu":"Buchet trandafiri roz",
+			"text_descriere":"Trandafirii roz sunt nelipsiti!",
+			"anotimp":"vara"
+		},
+		{
+			"cale_fisier":"florimov.jpg",
+			"titlu":"Buchet mov",
+			"text_descriere":"Un buchet de flori mov asigura succesul unui cadou",
+			"anotimp":"vara"
+		},
+		{
+			"cale_fisier":"cutietrandafiri.jpg",
+			"titlu":"Cutie trandafiri",
+			"text_descriere":"O minunata cutie de tradafiri creata de echipa noastra",
+			"anotimp":"toamna, iarna"
+		},
+		{
+			"cale_fisier":"aranjamentfloral.jpg",
+			"titlu":"Aranjament floral",
+			"text_descriere":"Aranjament floral",
+			"anotimp":"primavara, iarna"
+		},
+		{
+			"cale_fisier":"bujori.jpg",
+			"titlu":"Bujori",
+			"text_descriere":"Bujori roz",
+			"anotimp":"vara, primavara"
+		},
+		{
+			"cale_fisier":"floareasoarelui.jpg",
+			"titlu":"Floarea soarelui",
+			"text_descriere":"Floarea soarelui in vaza",
+			"anotimp":"vara"
+		},
+		{
+			"cale_fisier":"cutietrandafiri2.jpg",
+			"titlu":"Cutie V-day trandafiri rosii",
+			"text_descriere":"Cutie de tradafiri cu ocazia Valentine's Day",
+			"anotimp":"iarna"
+		},
+		{
+			"cale_fisier":"trandafircriog.jpg",
+			"titlu":"Trandafir criogenat",
+			"text_descriere":"Trandafir criogenat",
+			"anotimp":"primavara"
+		},
+		{
+			"cale_fisier":"buchetelegant.jpg",
+			"titlu":"Buchet elegant",
+			"text_descriere":"Buchet elegant",
+			"anotimp":"toamna, iarna"
+		},
+		{
+			"cale_fisier":"floriCC-BY.jpg",
+			"titlu":"Flori in vaza",
+			"text_descriere":" 'Herb Bouquet' by photofarmer is licensed with CC BY 2.0.",
+			"anotimp":"toamna"
+		},
+		{
+			"cale_fisier":"fsoareluicriog.jpg",
+			"titlu":"Floarea soarelui criogenata",
+			"text_descriere":" Floarea-soarelui in varianta criogenata",
+			"anotimp":"toamna"
+
+		},
+		{
+			"cale_fisier":"criog1.jpg",
+			"titlu":"Trandafir criogenat rosu",
+			"text_descriere":"Bucura-te de culoarea vibranta a trandafirului pe termen lung!",
+			"anotimp":"iarna, toamna"
+
+		},
+		{
+			"cale_fisier":"cutielalele.jpg",
+			"titlu":"Cutie lalele",
+			"text_descriere":"Lalele in cutie eleganta.",
+			"anotimp":"toamna, primavara"
+		},
+		{
+			"cale_fisier":"cutie1.jpg",
+			"titlu":"Cutie flori multicolore",
+			"text_descriere":"Flori multicolore intr-o cutie eleganta, cadou recomandat pentru toate varstele!",
+			"anotimp":"primavara, iarna"
+
+		},
+		{
+			"cale_fisier":"cutie2.jpg",
+			"titlu":"Cutie elaganta flori",
+			"text_descriere":"Flori intr-o cutie eleganta, cadou recomandat.",
+			"anotimp":"iarna, toamna"
+
+		}
+
+
+	]
+
+
+
+
+
+}
